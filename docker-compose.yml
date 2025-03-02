@@ -5,6 +5,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
+      - ./app:/app
       - type: bind
         source: ./banco.db
         target: /app/banco.db

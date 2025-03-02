@@ -16,3 +16,4 @@ class HabitUpdate(BaseModel):
 
 class HabitResponse(BaseModel):
     detail: Optional[str] = None
+    

@@ -1,0 +1,25 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"app" [color="black", label=<app>, shape="box", style="solid"];
+"app.config" [color="black", label=<app.config>, shape="box", style="solid"];
+"app.config.database" [color="black", label=<app.config.database>, shape="box", style="solid"];
+"app.habit_schema" [color="black", label=<app.habit_schema>, shape="box", style="solid"];
+"app.main" [color="black", label=<app.main>, shape="box", style="solid"];
+"app.models" [color="black", label=<app.models>, shape="box", style="solid"];
+"app.record_schema" [color="black", label=<app.record_schema>, shape="box", style="solid"];
+"app.repositories" [color="black", label=<app.repositories>, shape="box", style="solid"];
+"app.repositories.habit_repository" [color="black", label=<app.repositories.habit_repository>, shape="box", style="solid"];
+"app.repositories.record_repository" [color="black", label=<app.repositories.record_repository>, shape="box", style="solid"];
+"app.services" [color="black", label=<app.services>, shape="box", style="solid"];
+"app.services.habit_service" [color="black", label=<app.services.habit_service>, shape="box", style="solid"];
+"app.services.record_service" [color="black", label=<app.services.record_service>, shape="box", style="solid"];
+"app.main" -> "app.config.database" [arrowhead="open", arrowtail="none"];
+"app.main" -> "app.habit_schema" [arrowhead="open", arrowtail="none"];
+"app.main" -> "app.record_schema" [arrowhead="open", arrowtail="none"];
+"app.main" -> "app.repositories.habit_repository" [arrowhead="open", arrowtail="none"];
+"app.main" -> "app.repositories.record_repository" [arrowhead="open", arrowtail="none"];
+"app.main" -> "app.services.habit_service" [arrowhead="open", arrowtail="none"];
+"app.main" -> "app.services.record_service" [arrowhead="open", arrowtail="none"];
+"app.models" -> "app.config.database" [arrowhead="open", arrowtail="none"];
+}

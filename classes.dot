@@ -1,0 +1,15 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"app.habit_schema.HabitCreate" [color="black", fontcolor="black", label=<{HabitCreate|description : Optional[str]<br ALIGN="LEFT"/>frequency : List[str]<br ALIGN="LEFT"/>name : str<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.repositories.habit_repository.HabitRepository" [color="black", fontcolor="black", label=<{HabitRepository|db<br ALIGN="LEFT"/>|create(habit: HabitCreate)<br ALIGN="LEFT"/>get_all(): List[Habito]<br ALIGN="LEFT"/>get_by_id(habit_id: int): Optional[Habito]<br ALIGN="LEFT"/>get_by_name(name: str): Optional[Habito]<br ALIGN="LEFT"/>update(habit_id: int, name: str, description: Optional[str], frequency: str)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"app.habit_schema.HabitResponse" [color="black", fontcolor="black", label=<{HabitResponse|detail : Optional[str]<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.services.habit_service.HabitService" [color="black", fontcolor="black", label=<{HabitService|habit_repository<br ALIGN="LEFT"/>|create_habit(habit: HabitCreate)<br ALIGN="LEFT"/>update_habit(habit: HabitUpdate)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"app.habit_schema.HabitUpdate" [color="black", fontcolor="black", label=<{HabitUpdate|description : Optional[str]<br ALIGN="LEFT"/>frequency : Optional[List[str]]<br ALIGN="LEFT"/>id : int<br ALIGN="LEFT"/>name : Optional[str]<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.models.Habito" [color="black", fontcolor="black", label=<{Habito|created_at<br ALIGN="LEFT"/>description<br ALIGN="LEFT"/>frequency<br ALIGN="LEFT"/>id<br ALIGN="LEFT"/>name<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.record_schema.RecordCreate" [color="black", fontcolor="black", label=<{RecordCreate|description : Optional[str]<br ALIGN="LEFT"/>habit_id : int<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.models.RecordHabit" [color="black", fontcolor="black", label=<{RecordHabit|description<br ALIGN="LEFT"/>habit_id<br ALIGN="LEFT"/>id<br ALIGN="LEFT"/>recorded_at<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.repositories.record_repository.RecordRepository" [color="black", fontcolor="black", label=<{RecordRepository|db<br ALIGN="LEFT"/>|create(record: RecordCreate)<br ALIGN="LEFT"/>get_all(): List[RecordHabit]<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"app.record_schema.RecordResponse" [color="black", fontcolor="black", label=<{RecordResponse|detail : Optional[str]<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.services.record_service.RecordService" [color="black", fontcolor="black", label=<{RecordService|habit_repository<br ALIGN="LEFT"/>record_repository<br ALIGN="LEFT"/>|create_record(record: RecordCreate)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+}

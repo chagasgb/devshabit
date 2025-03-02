@@ -2,8 +2,8 @@ from datetime import date
 from typing import List, Optional
 from sqlalchemy.orm import Session
 from repositories.habit_repository import HabitRepository
-from app.models.models import Habito
-from schemas.habit_schema import HabitCreate, HabitResponse, HabitUpdate
+from models import Habito
+from habit_schema import HabitCreate, HabitResponse, HabitUpdate
 
 class HabitService:
     def __init__(self, db: Session):

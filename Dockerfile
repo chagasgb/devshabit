@@ -16,5 +16,5 @@ COPY ./app /app
 # Expor a porta que o FastAPI usará
 EXPOSE 8000
 
-# Definir o comando para rodar o servidor FastAPI
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Definir o comando para rodar o servidor FastAPI com reload
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

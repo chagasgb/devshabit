@@ -1,0 +1,4 @@
+ 1086  pip install pylint graphviz
+ 1087  pyreverse -o dot ./app
+ 1088  dot -Tpng classes.dot -o diagrama_classes.png
+ 1089  dot -Tpng packages.dot -o diagrama_pacotes.png
